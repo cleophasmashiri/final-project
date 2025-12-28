@@ -14,6 +14,7 @@ def emotion_detector(text_to_analyse):
     formattedRes = {'dominant_emotion': None}
     for k in keys:
         formattedRes[k] = getResultValue(response_json, k)
-        if formattedRes['dominant_emotion'] == None or formattedRes['dominant_emotion'] < formattedRes[k]:
-            formattedRes['dominant_emotion'] = formattedRes[k]
-    return formattedRes
+        dominant_emotion = formattedRes['dominant_emotion']
+        if dominant_emotion == None or formattedRes[dominant_emotion] < formattedRes[k]:
+            dominant_emotion = k
+            formattedRes['dominant_emotion'] = k

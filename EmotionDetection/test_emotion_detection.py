@@ -7,7 +7,7 @@ class TestEmotionDetection(unittest.TestCase):
     def test_emotion_detection(self):
 
         res_joy = emotion_detector('I am glad this happened')
-        res_joy_num = res_joy['joy']
+        res_joy_num = res_joy[joy']
         self.assertGreater(res_joy_num, 0.8)
 
         res_anger = emotion_detector('I am really mad about this')
