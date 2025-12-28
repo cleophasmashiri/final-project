@@ -18,3 +18,4 @@ def emotion_detector(text_to_analyse):
         if dominant_emotion == None or formattedRes[dominant_emotion] < formattedRes[k]:
             dominant_emotion = k
             formattedRes['dominant_emotion'] = k
+    return formattedRes
